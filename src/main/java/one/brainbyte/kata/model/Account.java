@@ -1,4 +1,4 @@
-package one.brainbyte.model;
+package one.brainbyte.kata.model;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package one.brainbyte.util;
+package one.brainbyte.kata.util;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;

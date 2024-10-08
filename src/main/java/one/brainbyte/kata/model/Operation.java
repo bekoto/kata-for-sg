@@ -1,6 +1,6 @@
-package one.brainbyte.model;
+package one.brainbyte.kata.model;
 
-import one.brainbyte.exception.OperationException;
+import one.brainbyte.kata.exception.OperationException;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

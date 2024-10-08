@@ -1,22 +1,24 @@
-package one.brainbyte.service;
+package one.brainbyte.kata.service;
 
-import one.brainbyte.model.DepositOperation;
-import one.brainbyte.model.Operation;
-import one.brainbyte.model.WithdrawOperation;
-import one.brainbyte.exception.AccountNotFoundException;
-import one.brainbyte.exception.BadDataException;
-import one.brainbyte.exception.DuplicationAccountNumberException;
-import one.brainbyte.exception.OperationException;
-import one.brainbyte.model.Account;
+import one.brainbyte.kata.exception.AccountNotFoundException;
+import one.brainbyte.kata.exception.BadDataException;
+import one.brainbyte.kata.exception.DuplicationAccountNumberException;
+import one.brainbyte.kata.exception.OperationException;
+import one.brainbyte.kata.model.Account;
+import one.brainbyte.kata.model.DepositOperation;
+import one.brainbyte.kata.model.Operation;
+import one.brainbyte.kata.model.WithdrawOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+@Service
 public class BankServiceImpl implements BankService{
 
     Logger log = LoggerFactory.getLogger(BankServiceImpl.class);

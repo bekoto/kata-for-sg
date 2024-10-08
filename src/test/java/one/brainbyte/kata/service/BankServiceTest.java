@@ -1,16 +1,17 @@
-package one.brainbyte.service;
+package one.brainbyte.kata.service;
 
 
-import one.brainbyte.model.DepositOperation;
-import one.brainbyte.model.Operation;
-import one.brainbyte.model.WithdrawOperation;
-import one.brainbyte.exception.AccountNotFoundException;
-import one.brainbyte.exception.BadDataException;
-import one.brainbyte.exception.DuplicationAccountNumberException;
-import one.brainbyte.exception.OperationException;
-import one.brainbyte.model.Account;
-import one.brainbyte.util.MemoryAppender;
+import one.brainbyte.kata.exception.AccountNotFoundException;
+import one.brainbyte.kata.exception.BadDataException;
+import one.brainbyte.kata.exception.DuplicationAccountNumberException;
+import one.brainbyte.kata.exception.OperationException;
+import one.brainbyte.kata.model.Account;
+import one.brainbyte.kata.model.DepositOperation;
+import one.brainbyte.kata.model.Operation;
+import one.brainbyte.kata.model.WithdrawOperation;
+import one.brainbyte.kata.util.MemoryAppender;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
@@ -21,8 +22,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static one.brainbyte.service.BankService.ACCOUNT_NOT_FOUND_EXCEPTION_MESSAGE;
-import static one.brainbyte.service.BankService.BAD_ACCOUNT_NUMBER_EXCEPTION_MESSAGE;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BankServiceTest {
@@ -92,7 +91,7 @@ class BankServiceTest {
 
         //Then
         OperationException exp = assertThrows(OperationException.class,() -> bankService.deposit(accountToDeposit, amountToWithdraw));
-        assertEquals(BAD_ACCOUNT_NUMBER_EXCEPTION_MESSAGE, exp.getMessage());
+        Assertions.assertEquals(BankService.BAD_ACCOUNT_NUMBER_EXCEPTION_MESSAGE, exp.getMessage());
 
     }
 
@@ -109,7 +108,7 @@ class BankServiceTest {
 
         //Then
         OperationException exp = assertThrows(OperationException.class,() -> bankService.deposit(accountToDeposit, amountToWithdraw));
-        assertEquals(BAD_ACCOUNT_NUMBER_EXCEPTION_MESSAGE, exp.getMessage());
+        Assertions.assertEquals(BankService.BAD_ACCOUNT_NUMBER_EXCEPTION_MESSAGE, exp.getMessage());
 
     }
 
@@ -198,7 +197,7 @@ class BankServiceTest {
         //Then
 
         var exception  = assertThrows(OperationException.class,() -> bankService.withdraw(accountToWithdraw, amountToWithdraw));
-        assertEquals(WithdrawOperation.OPERATION_NOT_ALLOWED_INSUFFICIENT_BALANCE_EXCEPTION_MESSAGE, exception.getMessage());
+        Assertions.assertEquals(WithdrawOperation.OPERATION_NOT_ALLOWED_INSUFFICIENT_BALANCE_EXCEPTION_MESSAGE, exception.getMessage());
     }
 
     @Test
@@ -230,7 +229,7 @@ class BankServiceTest {
         //Then
 
        var exception  = assertThrows(AccountNotFoundException.class,() -> bankService.withdraw(accountToWithdraw, amountToWithdraw));
-       assertEquals(ACCOUNT_NOT_FOUND_EXCEPTION_MESSAGE, exception.getMessage());
+       Assertions.assertEquals(BankService.ACCOUNT_NOT_FOUND_EXCEPTION_MESSAGE, exception.getMessage());
     }
 
     @Test
@@ -246,7 +245,7 @@ class BankServiceTest {
         //Then
 
         var exception  = assertThrows(AccountNotFoundException.class,() -> bankService.withdraw(accountToWithdraw, amountToWithdraw));
-        assertEquals(ACCOUNT_NOT_FOUND_EXCEPTION_MESSAGE, exception.getMessage());
+        Assertions.assertEquals(BankService.ACCOUNT_NOT_FOUND_EXCEPTION_MESSAGE, exception.getMessage());
     }
 
     @Test
@@ -262,7 +261,7 @@ class BankServiceTest {
         //Then
 
         var exception  = assertThrows(OperationException.class,() -> bankService.withdraw(accountToWithdraw, amountToWithdraw));
-        assertEquals(BAD_ACCOUNT_NUMBER_EXCEPTION_MESSAGE, exception.getMessage());
+        Assertions.assertEquals(BankService.BAD_ACCOUNT_NUMBER_EXCEPTION_MESSAGE, exception.getMessage());
     }
 
     @Test
@@ -298,7 +297,7 @@ class BankServiceTest {
 
         //then
         OperationException exp = assertThrows(OperationException.class, ()-> bankService.getAccount(Account.builder().accountNumber(accountNumber).build()));
-        assertEquals(ACCOUNT_NOT_FOUND_EXCEPTION_MESSAGE, exp.getMessage());
+        Assertions.assertEquals(BankService.ACCOUNT_NOT_FOUND_EXCEPTION_MESSAGE, exp.getMessage());
 
 
     }

@@ -1,10 +1,10 @@
-package one.brainbyte.service;
+package one.brainbyte.kata.service;
 
-import one.brainbyte.exception.AccountNotFoundException;
-import one.brainbyte.exception.BadDataException;
-import one.brainbyte.exception.DuplicationAccountNumberException;
-import one.brainbyte.model.Account;
-import one.brainbyte.exception.OperationException;
+import one.brainbyte.kata.exception.AccountNotFoundException;
+import one.brainbyte.kata.exception.BadDataException;
+import one.brainbyte.kata.exception.DuplicationAccountNumberException;
+import one.brainbyte.kata.model.Account;
+import one.brainbyte.kata.exception.OperationException;
 
 import java.math.BigDecimal;
 import java.util.List;

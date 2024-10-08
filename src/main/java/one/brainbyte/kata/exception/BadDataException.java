@@ -1,4 +1,4 @@
-package one.brainbyte.exception;
+package one.brainbyte.kata.exception;
 
 public class BadDataException extends Exception{
 
