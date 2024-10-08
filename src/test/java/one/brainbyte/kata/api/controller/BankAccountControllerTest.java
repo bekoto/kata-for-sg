@@ -40,17 +40,7 @@ class BankAccountControllerTest {
     }
 
     @Test
-    void getAccount() {
-    }
-
-    @Test
-    void account() {
-    }
-
-    @Test
     void addAccountShouldSuccess() throws Exception {
-        //String reqBody = new ObjectMapper().writeValueAsString(AccountOperation());
-
         //Given
 
         //When
@@ -64,13 +54,4 @@ class BankAccountControllerTest {
         Assertions.assertTrue(bankAccounts.size() > 0);
     }
 
-    @Test
-    void getAccountBalance() {
-
-    }
-
-    @Test
-    void printAccountStatements() {
-
-    }
 }
